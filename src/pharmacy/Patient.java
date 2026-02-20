@@ -31,7 +31,7 @@ package pharmacy;
 
 
 // getters for medicaiton and perscription will go here
-// remember to return mediacation and perscriptiuon
+// remember to return medication and perscriptiuon
 
 
 
