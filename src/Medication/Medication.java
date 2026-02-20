@@ -1,5 +1,7 @@
 package Medication;
 
+
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Medication {
@@ -24,6 +26,49 @@ public class Medication {
         this.name = name;
         this.dose = dose;
         this.quantityInStock = quantityInStock;
+        this.expiryDate = expiryDate;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDose(){
+        return this.dose;
+    }
+
+    public void setDose(String dose) {
+        this.dose = dose;
+    }
+
+    public int getQuantityInStock() {
+        if (quantityInStock == 0) {
+            System.out.println("Medication out of stock");
+        }
+        return quantityInStock;
+    }
+
+    public void setQuantityInStock(int quantityInStock) {
+        this.quantityInStock = quantityInStock;
+    }
+    // TODO: Add validation to compare expiry date to current date of medication.
+    public Date getExpiryDate() {
+        return expiryDate;
+    }
+
+    public void setExpiryDate(Date expiryDate) {
         this.expiryDate = expiryDate;
     }
 }
