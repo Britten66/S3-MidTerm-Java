@@ -5,6 +5,7 @@ public class Prescription {
     private Person doctor;
     private Person patient;
     private Medication medication;
-    private Prescription expiryDate;
+    private Medication expiryDate;
+
 }
 

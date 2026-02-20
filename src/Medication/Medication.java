@@ -55,7 +55,7 @@ public class Medication {
 
     public int getQuantityInStock() {
         if (quantityInStock == 0) {
-            System.out.println("Medication out of stock");
+            System.out.println("Medication is out of stock");
         }
         return quantityInStock;
     }
@@ -63,7 +63,7 @@ public class Medication {
     public void setQuantityInStock(int quantityInStock) {
         this.quantityInStock = quantityInStock;
     }
-    // TODO: Add validation to compare expiry date to current date of medication.
+    // TODO: Add validation to compare expiry date of the medication and the current date.
     public Date getExpiryDate() {
         return expiryDate;
     }
