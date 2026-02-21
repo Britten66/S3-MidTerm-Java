@@ -2,11 +2,9 @@ package pharmacy;
 
 
 // Team:           Justin Seaward, Christopher Britten
-
-
 // Date:           February 20, 2026
-// Description:    Pharmacy midterm semester 2
-// Details:        [Insert extended description here]
+// Description:    Pharmacy midterm semester 3
+// Details:        Patient class - extends Person, holds medications and prescriptions
 // Time Allocated: 2 weeks
 
 
@@ -23,6 +21,9 @@ package pharmacy;
 
     public String toString(){
         return super.toString();
+
+
+
     }
 }
 
