@@ -77,4 +77,9 @@ public class Medication {
     public void setExpiryDate(Date expiryDate) {
         this.expiryDate = expiryDate;
     }
+
+    public String toString() {
+        return "Medication information - " + "ID:" + this.id + ", Name: " + this.name + ", Dosage: " + this.dose +
+                ", Expiry date: " + this.expiryDate + ", Quantity in stock: " + this.quantityInStock;
+    }
 }
