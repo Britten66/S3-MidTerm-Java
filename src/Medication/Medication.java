@@ -14,6 +14,12 @@ public class Medication {
     public Medication(){
     }
 
+    public Medication(int id, String name, String dose){
+        this.id = id;
+        this.name = name;
+        this.dose = dose;
+    }
+
     public Medication(int id, String name, String dose, Date expiryDate){
         this.id = id;
         this.name = name;
