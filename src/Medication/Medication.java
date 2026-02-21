@@ -14,6 +14,12 @@ public class Medication {
     public Medication(){
     }
 
+    public Medication(int id, String name, String dose){
+        this.id = id;
+        this.name = name;
+        this.dose = dose;
+    }
+
     public Medication(int id, String name, String dose, Date expiryDate){
         this.id = id;
         this.name = name;
@@ -70,5 +76,10 @@ public class Medication {
 
     public void setExpiryDate(Date expiryDate) {
         this.expiryDate = expiryDate;
+    }
+
+    public String toString() {
+        return "Medication information - " + "ID:" + this.id + ", Name: " + this.name + ", Dosage: " + this.dose +
+                ", Expiry date: " + this.expiryDate + ", Quantity in stock: " + this.quantityInStock;
     }
 }
