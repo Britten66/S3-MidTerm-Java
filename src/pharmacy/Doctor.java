@@ -2,8 +2,8 @@ package pharmacy;
 
 // Team:           Justin Seaward, Christopher Britten
 // Date:           February 20, 2026
-// Description:    Pharmacy midterm semester 2
-// Details:        [Insert extended description here]
+// Description:    Pharmacy midterm semester 3
+// Details:       tbd
 // Time Allocated: 2 weeks
 
 
