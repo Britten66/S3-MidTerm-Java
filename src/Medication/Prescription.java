@@ -1,16 +1,18 @@
 package Medication;
-import pharmacy.Person;
+import pharmacy.Doctor;
+import pharmacy.Patient;
 
 public class Prescription{
     private int id;
-    private Person doctor;
-    private Person patient;
+    private Doctor doctor;
+    private Patient patient;
     private Medication medication;
     private Medication expiryDate;
 
-        public Prescription(){}
+        public Prescription(){
+        }
 
-        public Prescription(int id, Person doctor, Person patient, Medication medication, Medication expiryDate){
+        public Prescription(int id, Doctor doctor, Patient patient, Medication medication, Medication expiryDate){
             this.id = id;
             this.doctor = doctor;
             this.patient = patient;
@@ -26,19 +28,19 @@ public class Prescription{
         this.id = id;
     }
 
-    public Person getDoctor() {
+    public Doctor getDoctor() {
         return doctor;
     }
 
-    public void setDoctor(Person doctor) {
+    public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
 
-    public Person getPatient() {
+    public Patient getPatient() {
         return patient;
     }
 
-    public void setPatient(Person patient) {
+    public void setPatient(Patient patient) {
         this.patient = patient;
     }
 
