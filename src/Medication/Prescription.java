@@ -1,6 +1,4 @@
 package Medication;
-import pharmacy.Doctor;
-import pharmacy.Patient;
 
 public class Prescription{
     private int id;

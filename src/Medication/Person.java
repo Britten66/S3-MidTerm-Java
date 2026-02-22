@@ -1,4 +1,4 @@
-package pharmacy;
+package Medication;
 
 // Team:           Justin Seaward, Christopher Britten
 // Date:           February 20, 2026
@@ -7,6 +7,8 @@ package pharmacy;
 // Time Allocated: 2 weeks
 
 //imports here
+
+
 
 public class Person {
 
