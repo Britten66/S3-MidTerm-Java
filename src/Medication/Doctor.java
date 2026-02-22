@@ -14,7 +14,7 @@ public class Doctor extends Person {
     private String specialization;
     private List<Patient> patients;
 
-    public Doctor(int id, String name, int age, String phoneNumber){
+    public Doctor(int id, String name, int age, String phoneNumber, String specialization){
         super(id, name, age, phoneNumber);
         this. specialization = specialization;
         this.patients = new ArrayList<>();
@@ -56,7 +56,7 @@ public class Doctor extends Person {
 
 
     public String toString() {
-        return toString() + ", Specialization: " + specialization + ", Patients " + patients.size();
+        return super.toString() + ", Specialization: " + specialization + ", Patients " + patients.size();
 
     }
 }

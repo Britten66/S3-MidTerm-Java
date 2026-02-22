@@ -1,12 +1,10 @@
 package Medication;
 
-
 // Team:           Justin Seaward, Christopher Britten
 // Date:           February 20, 2026
 // Description:    Pharmacy midterm semester 3
 // Details:        Patient class - extends Person, holds medications and prescriptions
 // Time Allocated: 2 weeks
-
 
 
 // this extends Person meaning that Patient will inherit all of Persons attributres , id name etc
