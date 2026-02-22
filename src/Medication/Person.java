@@ -3,7 +3,8 @@ package Medication;
 // Team:           Justin Seaward, Christopher Britten
 // Date:           February 20, 2026
 // Description:    Pharmacy midterm semester 3
-// Details:        tbd
+// Details:        Person class is the base class for both patient and doctor, its holding shared info that each person has in the system
+//ID,Name,Age, Phonenumber- both Patient and doctor both extend this.
 // Time Allocated: 2 weeks
 
 //imports here

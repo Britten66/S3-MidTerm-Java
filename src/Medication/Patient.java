@@ -63,7 +63,7 @@ package Medication;
 
         public void setPrescriptions(List<Prescription> prescriptions){
 
-        this.medications = medications;
+        this.prescriptions = prescriptions;
 
         }
 

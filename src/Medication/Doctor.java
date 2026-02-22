@@ -3,7 +3,8 @@ package Medication;
 // Team:           Justin Seaward, Christopher Britten
 // Date:           February 20, 2026
 // Description:    Pharmacy midterm semester 3
-// Details:       tbd
+// Details:       A Doctor class that allows the user of end sysstem to add patients / doctor and list patients per doctor added
+//also inherits Person to give each member and ID,Name,Age, Phonenumber - and doctor a specialization
 // Time Allocated: 2 weeks
 
 import java.util.ArrayList;
