@@ -50,8 +50,6 @@ public class Prescription{
     }
 
     public LocalDate getPrescriptionExpiry() {
-//        LocalDate currentDate = LocalDate.now();
-//        prescriptionExpiry = currentDate.plusYears(1);
         return prescriptionExpiry;
     }
 
@@ -60,8 +58,8 @@ public class Prescription{
     }
 
     public String toString() {
-        return "Prescription information - " + "ID: " + this.id + ", Doctor: " + this.doctor + ", Patient: " + this.patient
-                + ", Medication: " + this.medication + ", Medication expiry date: " + this.prescriptionExpiry;
+        return "ID: " + this.id + "Doctor: " + this.doctor + "\n" + " Patient: " + this.patient + "\n"
+                + " Medication: " + this.medication + "\n" + " Medication expiry date: " + this.prescriptionExpiry;
     }
 }
 
