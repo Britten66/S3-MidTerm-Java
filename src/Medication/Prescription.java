@@ -50,6 +50,8 @@ public class Prescription{
     }
 
     public LocalDate getPrescriptionExpiry() {
+//        LocalDate currentDate = LocalDate.now();
+//        prescriptionExpiry = currentDate.plusYears(1);
         return prescriptionExpiry;
     }
 

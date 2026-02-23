@@ -9,15 +9,15 @@ public class Medication {
     private int quantityInStock;
     private LocalDate expiryDate;
 
-    public Medication(){
-    }
-
-    public Medication(int id, String name, String dose){
-        this.id = id;
-        this.name = name;
-        this.dose = dose;
-    }
-
+//    public Medication(){
+//    }
+//
+//    public Medication(int id, String name, String dose){
+//        this.id = id;
+//        this.name = name;
+//        this.dose = dose;
+//    }
+//
     public Medication(int id, String name, String dose, LocalDate expiryDate){
         this.id = id;
         this.name = name;
@@ -64,11 +64,15 @@ public class Medication {
         return quantityInStock;
     }
 
-    public void setQuantityInStock(int quantityInStock) {
+    public void addQuantityInStock(int quantityInStock) {
         this.quantityInStock = quantityInStock;
     }
-    // TODO: Add validation to compare expiry date of the medication and the current date.
+
     public LocalDate getExpiryDate() {
+//        LocalDate currentDate = LocalDate.now();
+//        if(expiryDate.isBefore(currentDate)){
+//            System.out.println("Medication is expired." + this.expiryDate);
+//        }
         return expiryDate;
     }
 
