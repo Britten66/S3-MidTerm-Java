@@ -1,6 +1,4 @@
 package Medication;
-import pharmacy.Doctor;
-import pharmacy.Patient;
 
 import java.time.LocalDate;
 
