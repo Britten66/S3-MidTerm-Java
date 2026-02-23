@@ -1,15 +1,13 @@
 package Medication;
 
-
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Medication {
     private int id;
     private String name;
     private String dose;
     private int quantityInStock;
-    private Date expiryDate;
+    private LocalDate expiryDate;
 
     public Medication(){
     }
@@ -20,14 +18,14 @@ public class Medication {
         this.dose = dose;
     }
 
-    public Medication(int id, String name, String dose, Date expiryDate){
+    public Medication(int id, String name, String dose, LocalDate expiryDate){
         this.id = id;
         this.name = name;
         this.dose = dose;
         this.expiryDate = expiryDate;
     }
 
-    public Medication(int id, String name, String dose, int quantityInStock, Date expiryDate){
+    public Medication(int id, String name, String dose, int quantityInStock, LocalDate expiryDate){
         this.id = id;
         this.name = name;
         this.dose = dose;
@@ -70,11 +68,11 @@ public class Medication {
         this.quantityInStock = quantityInStock;
     }
     // TODO: Add validation to compare expiry date of the medication and the current date.
-    public Date getExpiryDate() {
+    public LocalDate getExpiryDate() {
         return expiryDate;
     }
 
-    public void setExpiryDate(Date expiryDate) {
+    public void setExpiryDate(LocalDate expiryDate) {
         this.expiryDate = expiryDate;
     }
 

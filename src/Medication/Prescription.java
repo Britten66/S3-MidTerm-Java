@@ -2,22 +2,21 @@ package Medication;
 import pharmacy.Doctor;
 import pharmacy.Patient;
 
+import java.time.LocalDate;
+
 public class Prescription{
     private int id;
     private Doctor doctor;
     private Patient patient;
     private Medication medication;
-    private Medication expiryDate;
+    private LocalDate prescriptionExpiry;
 
-        public Prescription(){
-        }
-
-        public Prescription(int id, Doctor doctor, Patient patient, Medication medication, Medication expiryDate){
+        public Prescription(int id, Doctor doctor, Patient patient, Medication medication, LocalDate prescriptionExpiry){
             this.id = id;
             this.doctor = doctor;
             this.patient = patient;
             this.medication = medication;
-            this.expiryDate = expiryDate;
+            this.prescriptionExpiry = prescriptionExpiry;
         }
 
     public int getId() {
@@ -52,17 +51,17 @@ public class Prescription{
         this.medication = medication;
     }
 
-    public Medication getExpiryDate() {
-        return expiryDate;
+    public LocalDate getPrescriptionExpiry() {
+        return prescriptionExpiry;
     }
 
-    public void setExpiryDate(Medication expiryDate) {
-        this.expiryDate = expiryDate;
+    public void setPrescriptionExpiry(LocalDate prescriptionExpiry) {
+        this.prescriptionExpiry = prescriptionExpiry;
     }
 
     public String toString() {
-        return "Prescription information - " + "ID:" + this.id + " Doctor: " + this.doctor + " Patient: " + this.patient
-                + "Medication: " + this.medication + "Medication expiry date: " + this.expiryDate;
+        return "Prescription information - " + "ID: " + this.id + ", Doctor: " + this.doctor + ", Patient: " + this.patient
+                + ", Medication: " + this.medication + ", Medication expiry date: " + this.prescriptionExpiry;
     }
 }
 
