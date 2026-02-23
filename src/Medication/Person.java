@@ -25,7 +25,7 @@ public class Person {
 
 
     // when the variable getts called the constructor will assign the variable to the object created
-    public Person(int id, String name, int age, String phoneNumber){
+    public Person(int id, String name, int age, String phoneNumber) {
 
         this.id = id;
         this.name = name;
@@ -41,7 +41,7 @@ public class Person {
         return id;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
 
     }
@@ -51,17 +51,38 @@ public class Person {
 
 
     }
-    public String getPhoneNumber(){
+
+    public String getPhoneNumber() {
+
         return phoneNumber;
     }
 
     // setters will change the private varibale when it is outside of the class
 
     public void setName(String name) {
+
         this.name = name;
     }
+
+    // extra setters for tracking class requirment here
+
+    // added medication tracking so more setters are needed such as setAge and setNewPhone
+
+    public void setAge(int age) {
+        this.age =age;
+
+}
+
+    public void setNewPhone(String phone) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    // printing out
+
 
     public String toString(){
         return "ID: " + id + ", Name: " + name + ", Age: " + age + "Phone Number: " + phoneNumber;
     }
 }
+
+

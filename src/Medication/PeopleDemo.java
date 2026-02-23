@@ -43,7 +43,7 @@ public class PeopleDemo {
 
        System.out.println("Specialization " + doctor01.getSpecialization());
 
-       // test 6 here - testing setters to update
+       // test  here - testing setters to update
 
        doctor01.setSpecialization("Health Sciences");
        System.out.println("Updated Specialization: " + doctor01.getSpecialization());
