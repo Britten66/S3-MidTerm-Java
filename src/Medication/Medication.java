@@ -9,15 +9,10 @@ public class Medication {
     private int quantityInStock;
     private LocalDate expiryDate;
 
-//    public Medication(){
-//    }
-//
-//    public Medication(int id, String name, String dose){
-//        this.id = id;
-//        this.name = name;
-//        this.dose = dose;
-//    }
-//
+    public Medication(LocalDate expiryDate){
+        this.expiryDate = expiryDate;
+    }
+
     public Medication(int id, String name, String dose, LocalDate expiryDate){
         this.id = id;
         this.name = name;
@@ -64,15 +59,11 @@ public class Medication {
         return quantityInStock;
     }
 
-    public void addQuantityInStock(int quantityInStock) {
+    public void setQuantityInStock(int quantityInStock) {
         this.quantityInStock = quantityInStock;
     }
 
     public LocalDate getExpiryDate() {
-//        LocalDate currentDate = LocalDate.now();
-//        if(expiryDate.isBefore(currentDate)){
-//            System.out.println("Medication is expired." + this.expiryDate);
-//        }
         return expiryDate;
     }
 
@@ -81,7 +72,7 @@ public class Medication {
     }
 
     public String toString() {
-        return "Medication information - " + "ID:" + this.id + ", Name: " + this.name + ", Dosage: " + this.dose +
-                ", Expiry date: " + this.expiryDate + ", Quantity in stock: " + this.quantityInStock;
+        return "ID: " + this.id + " \n" +" Name: " + this.name + "\n" +" Dosage: " + this.dose + "\n" +
+                " Expiry date: " + this.expiryDate + "\n" + " Quantity in stock: " + this.quantityInStock;
     }
 }
