@@ -35,13 +35,21 @@ package Medication;
         // otherwise this is also commonly known as encapsulation
         // returning them outside of the private class makes them accessable
 
+
+
         public List<Medication> getMedications(){
+
+
+
 
         return medications;
         }
 
 
         public List<Prescription> getPrescriptions(){
+
+
+
 
         return prescriptions;
         }

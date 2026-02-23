@@ -33,32 +33,71 @@ private List<Medication> medications;
 
     }
 
-    public void deletePatient(Patient patient){
-        patients.remove(patient);
-        System.out.println(("Patient " + patient.getName()) + " removed");
-
-    }
+//    public void deletePatient(Patient patient){
+//        patients.remove(patient);
+//        System.out.println(("Patient " + patient.getName()) + " removed");
+//
+//    }
 
     // we can only call .remove if java see's an object created
     // since we will be using scanner and dont have anything set to a value here is a alt method with a loop like the test.
 
+    // here is the remove patient as a loop '
+
+
     public void deletePatient(int id){
 
-        for(int i = 0; i < patients.size(): i++){
+
+        // this is looping through  patients
+        for(int i = 0; i < patients.size(); i++){
 
             if(patients.get(i).getId() == id){
+                // remove at the position found
+
                 patients.remove(i);
                 System.out.println("Patient Removed");
+
+                //return will stop the loop
                 return;
+
+
             }
         }
 
+
+            // this will get printed if nothing found
         System.out.println("No Patient Under That Name Found");
+
     }
 
+    public
 
 
-    public String updatePatient(Patient
+
+
+
+
+    public void updatePatient(int id, String newName, int newAge, String newPhone){
+
+
+        // for loop searching through the patients again
+
+        for(int i = 0; i < patients.size(); i++){
+
+            if (patients.get(i).getId() == id) {
+                patients.get(i).setName(newName);
+                patients.get(i).setAge(newAge);
+                patients.get(i).setNewPhone(newPhone);
+                System.out.println("Patient Updated");
+                return;
+
+            }
+
+        }
+
+        System.out.println("Patient Not Found!");
+
+
     }
 
 
