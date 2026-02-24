@@ -117,9 +117,7 @@ private List<Prescription> prescriptions;
 
         // Method to delete medication.
     public void deleteMedication(int id){
-
         for(int i = 0; i < medications.size(); i++){
-
             if (medications.get(i).getId() == id) {
                 medications.remove(i);
                 System.out.println("Medicated deleted");
@@ -129,18 +127,20 @@ private List<Prescription> prescriptions;
         System.out.println("Medication Not Found!");
     }
 
-    public void checkExpiryDate(LocalDate expiryDate){
+    public void checkExpiryDateReport(LocalDate expiryDate){
         LocalDate currentDate = LocalDate.now();
+        System.out.println("****** Medication Expiry Report ****** \n");
         for (Medication medication : medications) {
             if (medication.getExpiryDate().isBefore(currentDate)) {
-                System.out.println("Medication" + medication.getName() + "was expired on " + medication.getExpiryDate());
+                System.out.println("Medication" + medication.getName() + "was expired on " + medication.getExpiryDate() + "\n");
             }
         }
         System.out.println("No expired medication found!");
     }
 
     public void fullSystemReport(){
-        for(Doctor doctor: doctors){
+        System.out.println("****** System Report ****** \n");
+        for(Doctor doctor : doctors){
             System.out.println("Doctor " + doctor.getName() + "\n" +
                     " - " + doctor.getId() + " \n" +
                     " - " + doctor.getSpecialization()+ " \n" +
@@ -163,5 +163,17 @@ private List<Prescription> prescriptions;
         }
     }
 
-
+    public void prescriptionsByDoctorIdReport(int id){
+        System.out.println("****** Prescriptions prescribed by Doctor ****** \n");
+        for(Doctor doctor: doctors){
+            if(doctor.getId() == id){
+                System.out.println("Doctor " + doctor.getName());
+                for(Prescription prescription: prescriptions){
+                    System.out.println("Prescriptions: " + "\n" +
+                                    prescription.getMedication() + "\n" +
+                                    prescription.getPatient() + " \n");
+                }
+            }
+        }
     }
+   }
