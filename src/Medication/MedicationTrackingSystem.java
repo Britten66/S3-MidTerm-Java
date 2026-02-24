@@ -102,7 +102,7 @@ private List<Prescription> prescriptions;
 
         // Method to update medication.
     public void updateMedication(int id, String name, String dose, LocalDate expiryDate){
-        // loop through medications
+        // loop through medications to find by id and update its information
         for (Medication medication : medications) {
             if (medication.getId() == id) {
                 medication.setName(name);
@@ -139,4 +139,29 @@ private List<Prescription> prescriptions;
         System.out.println("No expired medication found!");
     }
 
-}
+    public void fullSystemReport(){
+        for(Doctor doctor: doctors){
+            System.out.println("Doctor " + doctor.getName() + "\n" +
+                    " - " + doctor.getId() + " \n" +
+                    " - " + doctor.getSpecialization()+ " \n" +
+                    " - " + doctor.getAge() + "\n" +
+                    " - " + doctor.getPhoneNumber() +"\n" +
+                    " - " + doctor.getPatients());
+            }
+        for(Patient patient : patients){
+            System.out.println("Patient " + patient.getName() + "\n" +
+                    " - " + patient.getId() + "\n" +
+                    " - " + patient.getPhoneNumber() + "\n" +
+                    " - " + patient.getAge());
+        }
+        for(Medication medication : medications){
+            System.out.println("Medication " + medication.getName() + "\n" +
+                    " - " + medication.getId() + "\n" +
+                    " - " + medication.getDose() + "\n" +
+                    " - " + medication.getQuantityInStock() + "\n" +
+                    " - " + medication.getExpiryDate());
+        }
+    }
+
+
+    }
