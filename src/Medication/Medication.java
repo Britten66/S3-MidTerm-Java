@@ -1,33 +1,26 @@
 package Medication;
 
-
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Medication {
     private int id;
     private String name;
     private String dose;
     private int quantityInStock;
-    private Date expiryDate;
+    private LocalDate expiryDate;
 
-    public Medication(){
+    public Medication(LocalDate expiryDate){
+        this.expiryDate = expiryDate;
     }
 
-    public Medication(int id, String name, String dose){
-        this.id = id;
-        this.name = name;
-        this.dose = dose;
-    }
-
-    public Medication(int id, String name, String dose, Date expiryDate){
+    public Medication(int id, String name, String dose, LocalDate expiryDate){
         this.id = id;
         this.name = name;
         this.dose = dose;
         this.expiryDate = expiryDate;
     }
 
-    public Medication(int id, String name, String dose, int quantityInStock, Date expiryDate){
+    public Medication(int id, String name, String dose, int quantityInStock, LocalDate expiryDate){
         this.id = id;
         this.name = name;
         this.dose = dose;
@@ -69,17 +62,17 @@ public class Medication {
     public void setQuantityInStock(int quantityInStock) {
         this.quantityInStock = quantityInStock;
     }
-    // TODO: Add validation to compare expiry date of the medication and the current date.
-    public Date getExpiryDate() {
+
+    public LocalDate getExpiryDate() {
         return expiryDate;
     }
 
-    public void setExpiryDate(Date expiryDate) {
+    public void setExpiryDate(LocalDate expiryDate) {
         this.expiryDate = expiryDate;
     }
 
     public String toString() {
-        return "Medication information - " + "ID:" + this.id + ", Name: " + this.name + ", Dosage: " + this.dose +
-                ", Expiry date: " + this.expiryDate + ", Quantity in stock: " + this.quantityInStock;
+        return "ID: " + this.id + " \n" +" Name: " + this.name + "\n" +" Dosage: " + this.dose + "\n" +
+                " Expiry date: " + this.expiryDate + "\n" + " Quantity in stock: " + this.quantityInStock;
     }
 }
