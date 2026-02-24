@@ -100,7 +100,7 @@ private List<Prescription> prescriptions;
         System.out.println("Medications does not need to be restocked");
     }
 
-        // Method to update medication.
+    // Method to update medication.
     public void updateMedication(int id, String name, String dose, LocalDate expiryDate){
         // loop through medications to find by id and update its information
         for (Medication medication : medications) {
@@ -115,7 +115,7 @@ private List<Prescription> prescriptions;
         System.out.println("Medication Not Found!");
     }
 
-        // Method to delete medication.
+    // Method to delete medication.
     public void deleteMedication(int id){
         for(int i = 0; i < medications.size(); i++){
             if (medications.get(i).getId() == id) {
@@ -127,6 +127,7 @@ private List<Prescription> prescriptions;
         System.out.println("Medication Not Found!");
     }
 
+    // Method to search for expired medication and print a report.
     public void checkExpiryDateReport(LocalDate expiryDate){
         LocalDate currentDate = LocalDate.now();
         System.out.println("****** Medication Expiry Report ****** \n");
@@ -138,8 +139,10 @@ private List<Prescription> prescriptions;
         System.out.println("No expired medication found!");
     }
 
+    // Method to print a full system report, doctors patients in the system.
     public void fullSystemReport(){
         System.out.println("****** System Report ****** \n");
+        // loop through and print doctors in the system.
         for(Doctor doctor : doctors){
             System.out.println("Doctor " + doctor.getName() + "\n" +
                     " - " + doctor.getId() + " \n" +
@@ -148,12 +151,14 @@ private List<Prescription> prescriptions;
                     " - " + doctor.getPhoneNumber() +"\n" +
                     " - " + doctor.getPatients());
             }
+        // loop through nad print patients in the system.
         for(Patient patient : patients){
             System.out.println("Patient " + patient.getName() + "\n" +
                     " - " + patient.getId() + "\n" +
                     " - " + patient.getPhoneNumber() + "\n" +
                     " - " + patient.getAge());
         }
+        // loop through and print medications in the system.
         for(Medication medication : medications){
             System.out.println("Medication " + medication.getName() + "\n" +
                     " - " + medication.getId() + "\n" +
@@ -163,6 +168,7 @@ private List<Prescription> prescriptions;
         }
     }
 
+    // Method to print a report of a doctor and their prescriptions prescribed.
     public void prescriptionsByDoctorIdReport(int id){
         System.out.println("****** Prescriptions prescribed by Doctor ****** \n");
         for(Doctor doctor: doctors){
