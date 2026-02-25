@@ -210,4 +210,10 @@ private List<Prescription> prescriptions;
             System.out.println("No medication found by that name!");
         }
     }
+
+    // Method to add a new medication.
+    public void addDoctor(Doctor doctor){
+        doctors.add(doctor);
+        System.out.println("Medication " + doctor.getName() + " added" );
+    }
 }
