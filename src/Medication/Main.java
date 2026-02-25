@@ -48,7 +48,17 @@ public class Main {
                 int option = scanner.nextInt();
                 switch (option){
                     case 1:
-                        system.addPatient();
+                        System.out.println("Enter patient id:");
+                        int idPatient = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter patient name:");
+                        String namePatient = scanner.nextLine();
+                        System.out.println("Enter patient age:");
+                        int agePatient = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter patient phone number:");
+                        String phoneNumberPatient = scanner.nextLine();
+                        system.addPatient(new Patient(idPatient,namePatient,agePatient,phoneNumberPatient));
                         break;
                     case 2:
                         System.out.println("Enter ID of patient to delete");
@@ -57,7 +67,18 @@ public class Main {
                         system.deletePatient(deletePatient);
                         break;
                     case 3:
-                        system.updatePatient();
+                        System.out.println("Enter patient id:");
+                        int updateIdPatient = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter patient name:");
+                        String updateNamePatient = scanner.nextLine();
+                        System.out.println("Enter patient age:");
+                        int updateAgePatient = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter patient phone number:");
+                        String updatePhoneNumberPatient = scanner.nextLine();
+                        scanner.nextLine();
+                        system.updatePatient(updateIdPatient,updateNamePatient,updateAgePatient,updatePhoneNumberPatient);
                         break;
                     case 4:
                         System.out.println("Enter ID of patient to delete");
