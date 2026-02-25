@@ -1,5 +1,7 @@
 package Medication;
 
+import java.time.LocalDate;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -46,31 +48,77 @@ public class Main {
                 int option = scanner.nextInt();
                 switch (option){
                     case 1:
-                        system.addPatient(scanner, system);
+                        system.addPatient();
                         break;
                     case 2:
-                        system.deletePatient(scanner, system);
+                        system.deletePatient();
                         break;
                     case 3:
-                        system.updatePatient(scanner, system);
+                        system.updatePatient();
                         break;
                     case 4:
-                        system.searchPatientByName(scanner, system);
+                        system.searchPatientByName();
                         break;
                     case 5:
-                        system.addPatientToDoctor(scanner, system);
+                        system.addPatientToDoctor();
                         break;
                     case 6:
-                        system.addMedication(scanner, system);
+                        System.out.println("Enter medication id:");
+                        int id = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter medication name:");
+                        String name = scanner.nextLine();
+                        System.out.println("Enter medication dosage:");
+                        String dose = scanner.nextLine();
+                        System.out.println("Enter medication stock:");
+                        int stock = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter medication expiry date yyyy-mm-dd:");
+                        System.out.println("Enter year");
+                        int year = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter month");
+                        int month = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter day");
+                        int day = scanner.nextInt();
+                        scanner.nextLine();
+                        LocalDate expiryDate = LocalDate.of(year,month,day);
+                        system.addMedication(new Medication(id, name, dose, stock, expiryDate));
                         break;
                     case 7:
-                        system.deleteMedication(scanner,system);
+                        System.out.println("Enter the medications id that you want to delete");
+                        int deleteId = scanner.nextInt();
+                        system.deleteMedication(deleteId);
                         break;
                     case 8:
-                        system.updateMedication(scanner, system);
+                        System.out.println("Enter medication id:");
+                        int updateId = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter medication name:");
+                        String updateName = scanner.nextLine();
+                        System.out.println("Enter medication dosage:");
+                        String updateDose = scanner.nextLine();
+                        System.out.println("Enter medication stock:");
+                        int updateStock = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter medication expiry date yyyy-mm-dd:");
+                        System.out.println("Enter year");
+                        int updateYear = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter month");
+                        int updateMonth = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter day");
+                        int updateDay = scanner.nextInt();
+                        scanner.nextLine();
+                        LocalDate updateExpiryDate = LocalDate.of(updateYear,updateMonth,updateDay);
+                        system.updateMedication(updateId, updateName, updateDose, updateStock,updateExpiryDate);
                         break;
                     case 9:
-                        system.searchMedicationByName();
+                        System.out.println("Enter medication name to search");
+                        String searchName = scanner.nextLine();
+                        system.searchMedicationByName(searchName);
                         break;
                     case 10:
                         system.checkMedicationExpiryDate();
@@ -79,25 +127,27 @@ public class Main {
                         system.restockMedication();
                         break;
                     case 12:
-                        system.addDoctor(scanner, system);
+                        system.addDoctor();
                         break;
                     case 13:
-                        system.deleteDoctor(scanner, system);
+                        system.deleteDoctor();
                         break;
                     case 14:
-                        system.updateDoctor(scanner, system);
+                        system.updateDoctor();
                         break;
                     case 15:
-                        system.searchDoctorByName(scanner, system);
+                        system.searchDoctorByName();
                         break;
                     case 16:
                         system.fullSystemReport();
                         break;
                     case 17:
-                        system.expriedMedicationReport(scanner, system);
+                        system.expriedMedicationReport();
                         break;
                     case 18:
-                        system.prescriptionsByDoctorReport();
+                        System.out.println("Enter name of doctor for prescription report");
+                        String reportName = scanner.nextLine();
+                        system.prescriptionsByDoctorReport(reportName);
                         break;
                     case quit:
                         quit = true;
