@@ -51,13 +51,18 @@ public class Main {
                         system.addPatient();
                         break;
                     case 2:
-                        system.deletePatient();
+                        System.out.println("Enter ID of patient to delete");
+                        int deletePatient = scanner.nextInt();
+                        scanner.nextLine();
+                        system.deletePatient(deletePatient);
                         break;
                     case 3:
                         system.updatePatient();
                         break;
                     case 4:
-                        system.searchPatientByName();
+                        System.out.println("Enter ID of patient to delete");
+                        String searchPatientName = scanner.nextLine();
+                        system.searchPatientByName(searchPatientName);
                         break;
                     case 5:
                         system.addPatientToDoctor();
@@ -130,7 +135,10 @@ public class Main {
                         system.addDoctor();
                         break;
                     case 13:
-                        system.deleteDoctor();
+                        System.out.println("Enter ID of doctor to be deleted");
+                        int deleteDoctor = scanner.nextInt();
+                        scanner.nextLine();
+                        system.deleteDoctor(deleteDoctor);
                         break;
                     case 14:
                         system.updateDoctor();
