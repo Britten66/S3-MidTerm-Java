@@ -86,7 +86,11 @@ public class Main {
                         system.searchPatientByName(searchPatientName);
                         break;
                     case 5:
-                        system.addPatientToDoctor();
+                        System.out.println("Enter patients name");
+                        String patientName = scanner.nextLine();
+                        System.out.println("Enter doctors name");
+                        String doctorName = scanner.nextLine();
+                        system.addPatientToDoctor(patientName,doctorName);
                         break;
                     case 6:
                         System.out.println("Enter medication id:");
@@ -174,16 +178,30 @@ public class Main {
                         system.deleteDoctor(deleteDoctor);
                         break;
                     case 14:
-                        system.updateDoctor();
+                        System.out.println("Enter doctor id:");
+                        int updateDoctorId = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter doctor name:");
+                        String updateDoctorName = scanner.nextLine();
+                        System.out.println("Enter doctor age:");
+                        int updateDoctorAge = scanner.nextInt();
+                        System.out.println("Enter doctor phone number:");
+                        String updateDoctorPhoneNumber = scanner.nextLine();
+                        scanner.nextLine();
+                        System.out.println("Enter doctor specialization:");
+                        String updateDoctorSpecialization = scanner.nextLine();
+                        system.updateDoctor(updateDoctorId,updateDoctorName,updateDoctorAge,updateDoctorPhoneNumber,updateDoctorSpecialization);
                         break;
                     case 15:
-                        system.searchDoctorByName();
+                        System.out.println("Enter doctor's name to search");
+                        String searchDoctorName = scanner.nextLine();
+                        system.searchDoctorByName(searchDoctorName);
                         break;
                     case 16:
                         system.fullSystemReport();
                         break;
                     case 17:
-                        system.expriedMedicationReport();
+                        system.expiredMedicationReport();
                         break;
                     case 18:
                         System.out.println("Enter name of doctor for prescription report");
