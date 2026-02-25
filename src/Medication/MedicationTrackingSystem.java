@@ -7,17 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 public class MedicationTrackingSystem {
 
-
     // here are the private variables that link to the classes made
 
-private List<Patient> patients;
-private List<Doctor> doctors;
-private List<Medication> medications;
-private List<Prescription> prescriptions;
+    private List<Patient> patients;
+    private List<Doctor> doctors;
+    private List<Medication> medications;
+    private List<Prescription> prescriptions;
 
 
-
-   // creating the default constructor for the medication tracking system here
+    // creating the default constructor for the medication tracking system here
 
     public MedicationTrackingSystem() {
 
@@ -36,13 +34,12 @@ private List<Prescription> prescriptions;
 
     }
 
+//    public void deletePatient(Patient patient){
+//        patients.remove(patient);
+//        System.out.println(("Patient " + patient.getName()) + " removed");
+//
+//    }
 
-    //       public void deletePatient(Patient patient){
-    //        patients.remove(patient);
-    //        System.out.println(("Patient " + patient.getName()) + " removed");
-
-    //      we can only call .remove if java see's an object created
-    //       since we will be using scanner and dont have anything set to a value here is a alt method with a loop like the test.
     // we can only call .remove if java see's an object created
     // since we will be using scanner and don't have anything set to a value here is a alt method with a loop like the test.
 
@@ -66,12 +63,9 @@ private List<Prescription> prescriptions;
 
 
         // this will get printed if nothing found
-            // this will get printed if nothing found
+        // this will get printed if nothing found
         System.out.println("No Patient Under That Name Found");
     }
-
-
-
 
 
     public void updatePatient(int id, String newName, int newAge, String newPhone) {
@@ -79,7 +73,7 @@ private List<Prescription> prescriptions;
         // for loop searching through the patients again
 
 
-        for(int i = 0; i < patients.size(); i++){
+        for (int i = 0; i < patients.size(); i++) {
 
             if (patients.get(i).getId() == id) {
                 patients.get(i).setName(newName);
@@ -145,7 +139,7 @@ private List<Prescription> prescriptions;
 
     //searching doctor by name will be same search as before
 
-    public void searchDoctor(String name) {
+    public void searchDoctorByName(String name) {
 
         for (int i = 0; i < doctors.size(); i++) {
             if (doctors.get(i).getName().equalsIgnoreCase(name)) {
@@ -165,75 +159,86 @@ private List<Prescription> prescriptions;
 
     //they will both will need to be set to null starting off
 
-        public void addPatientToDoctor(int patientId, int doctorId) {
+    public void addPatientToDoctor(int patientId, int doctorId) {
 
-            // setting found variables to null
+        // setting found variables to null
 
-            Patient foundPatient = null;
-            Doctor foundDoctor = null;
+        Patient foundPatient = null;
+        Doctor foundDoctor = null;
 
-            // looping through patients for id
+        // looping through patients for id
 
-            for (int i = 0; i < patients.size(); i++) {
+        for (int i = 0; i < patients.size(); i++) {
 
-                if (patients.get(i).getId() == patientId) {
-                    foundPatient = patients.get(i);
-                }
-
+            if (patients.get(i).getId() == patientId) {
+                foundPatient = patients.get(i);
             }
 
-            // looping through doctors for id
+        }
 
-            for (int i = 0; i < doctors.size(); i++) {
+        // looping through doctors for id
+
+        for (int i = 0; i < doctors.size(); i++) {
 
 
-                if (doctors.get(i).getId() == doctorId) {
-                    foundDoctor = doctors.get(i);
-                }
+            if (doctors.get(i).getId() == doctorId) {
+                foundDoctor = doctors.get(i);
             }
-            if (foundPatient != null && foundDoctor != null) {
-                foundDoctor.addPatient((foundPatient));
+        }
+        if (foundPatient != null && foundDoctor != null) {
+            foundDoctor.addPatient((foundPatient));
 
             System.out.println("Patient added to Doctor");
         } else {
-                System.out.println("Patient or Doctor Not Found");
-            }
+            System.out.println("Patient or Doctor Not Found");
         }
-
-            // Method to add a new medication.
-            public void addMedication(Medication medication){
-                medications.add(medication);
-                System.out.println("Medication " + medication.getName() + " added" );
-            }
-
-             // Method to restock medication
-
-
-            public void restockMedication(int quantityInStock){
-
-
-        // loop through medications to find medications that need to be restocked.
-        for(int i = 0; 1 < medications.size(); i++){
-            if(medications.get(i).getQuantityInStock() == 0){
-                System.out.println("Medication " + medications.get(i).getName() + "needs to be restocked.");
-                medications.get(i).setQuantityInStock(quantityInStock);
-            }
-        }
-        System.out.println("Medications does not need to be restocked");
     }
 
+    public void searchPatientByName(String name) {
+        for (int i = 0; i < patients.size(); i++) {
+            if (patients.get(i).getName().equalsIgnoreCase(name)) {
+                System.out.println("Patient Found: " + patients.get(i));
+            }
+        }
+        System.out.println("Patient not found");
 
+    }
+    // Method to add a new medication.
+    public void addMedication(Medication medication) {
+        medications.add(medication);
+        System.out.println("Medication " + medication.getName() + " added");
+    }
+
+    // Method to restock medication
+
+
+    public void restockMedication(int quantityInStock) {
+
+        boolean restock = false;
+        // loop through medications to find medications that need to be restocked.
+        for (Medication medication : medications) {
+            if (medication.getQuantityInStock() <= 5) {
+                medication.setQuantityInStock(20);
+                System.out.println("Medication restocked.");
+                restock = true;
+            }
+        }
+        if (!restock) {
+            System.out.println("Medication(s) does not need to be restocked");
+        }
+    }
 
 
     // Method to update medication.
 
-    public void updateMedication(int id, String name, String dose, LocalDate expiryDate){
 
-        // loop through medications to find by id and update its information
+    public void updateMedication(int id, String name, String dose, int quantityInStock, LocalDate expiryDate) {
+        // loop through medications to find by id and update its information.
         for (Medication medication : medications) {
             if (medication.getId() == id) {
                 medication.setName(name);
                 medication.setDose(dose);
+                medication.setQuantityInStock(quantityInStock);
                 medication.setExpiryDate(expiryDate);
                 System.out.println("Medicated Updated.");
                 return;
@@ -244,8 +249,8 @@ private List<Prescription> prescriptions;
 
 
     // Method to delete medication.
-    public void deleteMedication(int id){
-        for(int i = 0; i < medications.size(); i++){
+    public void deleteMedication(int id) {
+        for (int i = 0; i < medications.size(); i++) {
             if (medications.get(i).getId() == id) {
                 medications.remove(i);
                 System.out.println("Medicated deleted");
@@ -259,64 +264,89 @@ private List<Prescription> prescriptions;
     // Method to search for expired medication and print a report.
 
 
-    public void checkExpiryDateReport(LocalDate expiryDate){
-        LocalDate currentDate = LocalDate.now();
-        System.out.println("****** Medication Expiry Report ****** \n");
-        for (Medication medication : medications) {
-            if (medication.getExpiryDate().isBefore(currentDate)) {
-                System.out.println("Medication" + medication.getName() + "was expired on " + medication.getExpiryDate() + "\n");
+    public void checkExpiryDateReport(LocalDate expiryDate) {
+        // Method to search for expired medication
+            LocalDate currentDate = LocalDate.now();
+            for (Medication medication : medications) {
+                if (medication.getExpiryDate().isBefore(currentDate)) {
+                    System.out.println("Medication " + medication.getName() + " was expired on " + medication.getExpiryDate() + "\n");
+                }
+            }
+            System.out.println("No expired medication found!");
+        }
+
+        // Method to print a full system report, doctors patients in the system.
+        public void fullSystemReport () {
+            System.out.println("****** Full System Report ****** \n");
+            // loop through and print doctors in the system.
+            for (Doctor doctor : doctors) {
+                System.out.println("Doctor " + doctor.getName() + "\n" +
+                        "Id" + " - " + doctor.getId() + " \n" +
+                        "Specialization" + " - " + doctor.getSpecialization() + " \n" +
+                        "Age" + " - " + doctor.getAge() + "\n" +
+                        "Phone Number" + " - " + doctor.getPhoneNumber() + "\n" +
+                        "Patients" + " - " + doctor.getPatients());
+            }
+            // loop through nad print patients in the system.
+            for (Patient patient : patients) {
+                System.out.println("Patient " + patient.getName() + "\n" +
+                        "Id" + " - " + patient.getId() + "\n" +
+                        "Phone Number" + " - " + patient.getPhoneNumber() + "\n" +
+                        "Age" + " - " + patient.getAge());
+            }
+            // loop through and print medications in the system.
+            for (Medication medication : medications) {
+                System.out.println("Medication " + medication.getName() + "\n" +
+                        "Id" + " - " + medication.getId() + "\n" +
+                        "Dose" + " - " + medication.getDose() + "\n" +
+                        "Quantity in stock" + " - " + medication.getQuantityInStock() + "\n" +
+                        "Expiry date" + " - " + medication.getExpiryDate());
+            }
+            // loop through and print prescription in the system.
+            for (Prescription prescription : prescriptions) {
+                System.out.println("Prescriptions " + " \n" +
+                        "Id" + " - " + prescription.getId() + "\n" +
+                        "Patient" + " - " + prescription.getPatient().getName() + "\n" +
+                        "Medication" + " - " + prescription.getMedication().getName() + "\n" +
+                        "Prescribing doctor" + " - " + prescription.getDoctor().getName() + "\n" +
+                        "Expiry date of prescription" + " - " + prescription.getPrescriptionExpiry());
             }
         }
-        System.out.println("No expired medication found!");
-    }
 
-    // Method to print a full system report, doctors patients in the system.
-    public void fullSystemReport(){
-        System.out.println("****** System Report ****** \n");
-        // loop through and print doctors in the system.
-        for(Doctor doctor : doctors){
-            System.out.println("Doctor " + doctor.getName() + "\n" +
-                    " - " + doctor.getId() + " \n" +
-                    " - " + doctor.getSpecialization()+ " \n" +
-                    " - " + doctor.getAge() + "\n" +
-                    " - " + doctor.getPhoneNumber() +"\n" +
-                    " - " + doctor.getPatients());
-            }
-        // loop through nad print patients in the system.
-        for(Patient patient : patients){
-            System.out.println("Patient " + patient.getName() + "\n" +
-                    " - " + patient.getId() + "\n" +
-                    " - " + patient.getPhoneNumber() + "\n" +
-                    " - " + patient.getAge());
-        }
-        // loop through and print medications in the system.
-        for(Medication medication : medications){
-            System.out.println("Medication " + medication.getName() + "\n" +
-                    " - " + medication.getId() + "\n" +
-                    " - " + medication.getDose() + "\n" +
-                    " - " + medication.getQuantityInStock() + "\n" +
-                    " - " + medication.getExpiryDate());
-        }
-    }
-
-    // Method to print a report of a doctor and their prescriptions prescribed.
-    public void prescriptionsByDoctorIdReport(int id){
-        System.out.println("****** Prescriptions prescribed by Doctor ****** \n");
-        for(Doctor doctor: doctors){
-            if(doctor.getId() == id){
-                System.out.println("Doctor " + doctor.getName());
-                for(Prescription prescription: prescriptions){
-                    System.out.println("Prescriptions: " + "\n" +
-                                    prescription.getMedication() + "\n" +
-                                    prescription.getPatient() + " \n");
+        // Method to print a report of a doctor and their prescriptions prescribed.
+        public void prescriptionsByDoctorReport (String name){
+            System.out.println("****** Prescriptions prescribed by Doctor ****** \n");
+            for (Doctor doctor : doctors) {
+                if (doctor.getName().equals(name)) {
+                    System.out.println("Doctor " + doctor.getName());
+                    for (Prescription prescription : prescriptions) {
+                        System.out.println("Prescriptions: " + "\n" +
+                                "Medication " + " - " + prescription.getMedication().getName() + "\n" +
+                                "Patient " + " - " + prescription.getPatient().getName() + " \n");
+                    }
                 }
             }
         }
+        // Method to search for medication by name
+        public void searchMedicationByName (String name){
+            boolean found = false;
+            for (Medication medication : medications) {
+                if (medication.getName().equals(name)) {
+                    System.out.println("Medication: " + medication.getName() + "\n" +
+                            "Id" + " - " + medication.getId() + "\n" +
+                            "Dose" + " - " + medication.getDose() + "\n" +
+                            "Quantity in stock" + " - " + medication.getQuantityInStock() + "\n" +
+                            "Expiry date" + " - " + medication.getExpiryDate() + "\n");
+                    found = true;
+                }
+            }
+            if (!found) {
+                System.out.println("No medication found by that name!");
+            }
+        }
+
+
     }
-   }
-
-
-
 
 
 
