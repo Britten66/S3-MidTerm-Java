@@ -153,7 +153,19 @@ public class Main {
                         system.restockMedication();
                         break;
                     case 12:
-                        system.addDoctor();
+                        System.out.println("Enter doctor id:");
+                        int idDoctor = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter doctor name:");
+                        String nameDoctor = scanner.nextLine();
+                        System.out.println("Enter doctor age:");
+                        int ageDoctor = scanner.nextInt();
+                        System.out.println("Enter doctor phone number:");
+                        String phoneNumberDoctor = scanner.nextLine();
+                        scanner.nextLine();
+                        System.out.println("Enter doctor specialization:");
+                        String specializationDoctor = scanner.nextLine();
+                        system.addDoctor(new Doctor(idDoctor,nameDoctor,ageDoctor, phoneNumberDoctor, specializationDoctor));
                         break;
                     case 13:
                         System.out.println("Enter ID of doctor to be deleted");
