@@ -85,9 +85,22 @@ public class Main {
                         String searchPatientName = scanner.nextLine();
                         system.searchPatientByName(searchPatientName);
                         break;
+
+                        // Adding patient to doctor will req a new scanner and prompt user
+                        // this will req by id and be in two seperate inputs
+
                     case 5:
-                        system.addPatientToDoctor();
+                        System.out.println("Enter Patient ID: ");
+                        int patientId = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter Doctor ID");
+                        int doctorId = scanner.nextInt();
+                        scanner.nextLine();
+                        system.addPatientToDoctor(patientId, doctorId);
                         break;
+
+
+
                     case 6:
                         System.out.println("Enter medication id:");
                         int id = scanner.nextInt();
@@ -173,24 +186,59 @@ public class Main {
                         scanner.nextLine();
                         system.deleteDoctor(deleteDoctor);
                         break;
+
+                        // scanner input for updating doctor info
+                        // giving print statemtns to user to ask for input
+                        // switch case will accept user input via the method its passing
+
                     case 14:
-                        system.updateDoctor();
+                        System.out.println("Enter Doctor Id: ");
+                        int updateDoctorId = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter New Name");
+                        String updateDoctorName = scanner.nextLine();
+                        System.out.println("Enter New Age");
+                        int updateAgeDoctor = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Enter new Phone Number");
+                        String updatePhoneDoctor = scanner.nextLine();
+                        system.updateDoctor(updateDoctorId, updateDoctorName, updateAgeDoctor, updatePhoneDoctor);
                         break;
+
+
+
+                        // searching doctor by name
+                        // this will accept a name using the search by name method
+
                     case 15:
-                        system.searchDoctorByName();
+
+                        System.out.println("Enter doctor name that you want to search ");
+                        String searchDoctorName = scanner.nextLine();
+                        system.searchDoctorByName(searchDoctorName);
                         break;
+
+
+
+
+
+
+
+
                     case 16:
                         system.fullSystemReport();
                         break;
                     case 17:
-                        system.expriedMedicationReport();
+                        system.checkMedicationExpiryDate();
                         break;
                     case 18:
                         System.out.println("Enter name of doctor for prescription report");
                         String reportName = scanner.nextLine();
                         system.prescriptionsByDoctorReport(reportName);
                         break;
-                    case quit:
+
+
+
+                    case 19:
                         quit = true;
                         System.out.println("System shutting down");
                         break;

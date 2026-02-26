@@ -74,7 +74,7 @@ public class Person {
 }
 
     public void setNewPhone(String phone) {
-        this.phoneNumber = phoneNumber;
+        this.phoneNumber = phone;
     }
 
     // printing out
