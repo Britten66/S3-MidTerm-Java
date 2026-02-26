@@ -212,7 +212,7 @@ public class MedicationTrackingSystem {
     // Method to restock medication
 
 
-    public void restockMedication(int quantityInStock) {
+    public void restockMedication() {
 
         boolean restock = false;
         // loop through medications to find medications that need to be restocked.
@@ -264,7 +264,7 @@ public class MedicationTrackingSystem {
     // Method to search for expired medication and print a report.
 
 
-    public void checkExpiryDateReport(LocalDate expiryDate) {
+    public void checkMedicationExpiryDate() {
         // Method to search for expired medication
             LocalDate currentDate = LocalDate.now();
             for (Medication medication : medications) {
