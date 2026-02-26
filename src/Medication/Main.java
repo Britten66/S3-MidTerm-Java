@@ -196,7 +196,7 @@ public class Main {
                     case 14:
 
                         System.out.println("Enter Doctor Id: ");
-                        int updateDoctorId = scanner.nextInt();
+                        int updateDocId = scanner.nextInt();
                         scanner.nextLine();
                         System.out.println("Enter New Name");
                         String updateDoctorName = scanner.nextLine();
@@ -205,7 +205,7 @@ public class Main {
                         scanner.nextLine();
                         System.out.println("Enter new Phone Number");
                         String updatePhoneDoctor = scanner.nextLine();
-                        system.updateDoctor(updateDoctorId, updateDoctorName, updateAgeDoctor, updatePhoneDoctor);
+                        system.updateDoctor(updateDocId, updateDoctorName, updateAgeDoctor, updatePhoneDoctor);
                         break;
 
 
@@ -233,7 +233,7 @@ public class Main {
                         break;
                     case 17:
 
-                        system.checkMedicationExpiryDate();
+                        system.expiredMedicationReport();
                         break;
                     case 18:
                         System.out.println("Enter name of doctor for prescription report");

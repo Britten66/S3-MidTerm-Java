@@ -275,6 +275,27 @@ public class MedicationTrackingSystem {
             System.out.println("No expired medication found!");
         }
 
+
+    // Method to search for expired medication and print a report
+    public void expiredMedicationReport(){
+        LocalDate currentDate = LocalDate.now();
+        System.out.println("****** Expired Medication Report ******");
+        for (Medication medication : medications) {
+            if (medication.getExpiryDate().isBefore(currentDate)) {
+                System.out.println("Medication " + medication.getName() +
+                        " ID" + " - " + medication.getId() + " \n" +
+                        " Expired on" + " - " + medication.getExpiryDate() + "\n" +
+                        " Quantity in stock" + " - " + medication.getQuantityInStock() );
+                System.out.println();
+            }
+        }
+        System.out.println("No expired medication found!");
+    }
+
+
+
+
+
         // Method to print a full system report, doctors patients in the system.
         public void fullSystemReport () {
             System.out.println("****** Full System Report ****** \n");
