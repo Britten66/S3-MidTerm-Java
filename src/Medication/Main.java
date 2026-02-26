@@ -90,6 +90,8 @@ public class Main {
                         // this will req by id and be in two seperate inputs
 
                     case 5:
+
+
                         System.out.println("Enter Patient ID: ");
                         int patientId = scanner.nextInt();
                         scanner.nextLine();
@@ -192,6 +194,7 @@ public class Main {
                         // switch case will accept user input via the method its passing
 
                     case 14:
+
                         System.out.println("Enter Doctor Id: ");
                         int updateDoctorId = scanner.nextInt();
                         scanner.nextLine();
@@ -215,6 +218,7 @@ public class Main {
                         System.out.println("Enter doctor name that you want to search ");
                         String searchDoctorName = scanner.nextLine();
                         system.searchDoctorByName(searchDoctorName);
+
                         break;
 
 
@@ -228,6 +232,7 @@ public class Main {
                         system.fullSystemReport();
                         break;
                     case 17:
+
                         system.checkMedicationExpiryDate();
                         break;
                     case 18:
@@ -247,4 +252,5 @@ public class Main {
                 }
             }
         }
+
 }
