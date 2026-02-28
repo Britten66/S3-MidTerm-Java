@@ -8,7 +8,7 @@ public class PrescriptionDemo {
         Prescription p1 = new Prescription(101,
                 new Doctor(34,"Scamper Scamper", 69, "7093456543","dogs"),
                 new Patient(32, "Steven seagull",32, "7098766789"),
-                new Medication(432,"Oxycodo", "One pill before bed", LocalDate.of(2026,6,6)),
+                new Medication(432,"Oxycontin", "One pill before bed", LocalDate.of(2026,6,6)),
                 LocalDate.of(2026,2,10).plusYears(1));
 
         Prescription p2 = new Prescription(201,
@@ -27,7 +27,7 @@ public class PrescriptionDemo {
                 new Doctor(90, "Doc Brown", 65, "1211985195", "Time Travel"),
                 new Patient(12, "Marty McFly", 17, "5558882311"),
                 new Medication(88, "Plutonium", "Handle with care at 88mph", LocalDate.of(1955, 11, 5)),
-                LocalDate.of(2026, 2, 28).plusYears(1))
+                LocalDate.of(2026, 2, 28).plusYears(1));
 
         System.out.println("Doctor - " + p1.getDoctor());
         System.out.println("Medication - " + p1.getMedication());
