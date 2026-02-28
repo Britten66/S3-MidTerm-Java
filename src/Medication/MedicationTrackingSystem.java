@@ -366,7 +366,10 @@ public class MedicationTrackingSystem {
             }
         }
 
-
+        public void addPrescription(Prescription prescription){
+            prescriptions.add(prescription);
+            System.out.println("Prescription " + prescription.getId() + " added");
+        }
 
     }
 
