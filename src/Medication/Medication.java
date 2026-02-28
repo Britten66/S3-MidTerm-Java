@@ -53,9 +53,6 @@ public class Medication {
     }
 
     public int getQuantityInStock() {
-        if (quantityInStock == 0) {
-            System.out.println("Medication is out of stock");
-        }
         return quantityInStock;
     }
 

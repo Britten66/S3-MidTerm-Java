@@ -8,47 +8,6 @@ public class Main {
 
         public static void main(String[] args) {
             MedicationTrackingSystem system = new MedicationTrackingSystem();
-            // Data for doctors, patients, medications and prescriptions.
-            Doctor doc1 = new Doctor(34,"Scamper Scamper", 69, "7093456543","dogs");
-            Patient pat1 = new Patient(32, "Steven seagull",32, "7098766789");
-            Medication med1 =  new Medication(432,"Oxycontin", "One pill before bed", LocalDate.of(2026,6,6));
-            Prescription p1 = new Prescription(1001, doc1, pat1, med1, LocalDate.of(2026, 2, 28).plusYears(1));
-            //Add to system
-            system.addDoctor(doc1);
-            system.addPatient(pat1);
-            system.addMedication(med1);
-            system.addPrescription(p1);
-
-            Doctor doc2 = new Doctor(30, "Bat Man", 37, "7091233456", "BadGuys");
-            Patient pat2 = new Patient(43, "Bender", 20, "1011011010");
-            Medication med2 = new Medication(23, "WD-40", "Three times a day, on all joints", LocalDate.of(2027,2,28));
-            Prescription p2 = new Prescription(1002, doc2, pat2, med2, LocalDate.of(2026, 2, 28).plusYears(1));
-
-            system.addDoctor(doc2);
-            system.addPatient(pat2);
-            system.addMedication(med2);
-            system.addPrescription(p2);
-
-            Doctor doc3 = new Doctor(301, "Dr. Dolittle", 42, "555-0123", "Veterinary");
-            Patient pat3 = new Patient(901, "Scooby Doo", 7, "800-726-6291");
-            Medication med3 = new Medication(77, "Scooby Snacks", "One per mystery", 50, LocalDate.of(2028, 12, 25));
-            Prescription p3 = new Prescription(1003, doc3, pat3, med3, LocalDate.of(2026, 2, 28).plusYears(1));
-
-            system.addDoctor(doc3);
-            system.addPatient(pat3);
-            system.addMedication(med3);
-            system.addPrescription(p3);
-
-            Doctor doc4 = new Doctor(401, "Doc Brown", 65, "121-1985", "Temporal Physics");
-            Patient pat4 = new Patient(902, "Marty McFly", 17, "555-888-2311");
-            Medication med4 = new Medication(88, "Plutonium", "Handle at 88mph", 10, LocalDate.of(1955, 11, 5));
-            Prescription p4 = new Prescription(1004, doc4, pat4, med4, LocalDate.of(2026, 2, 28).plusYears(1));
-
-            system.addDoctor(doc4);
-            system.addPatient(pat4);
-            system.addMedication(med4);
-            system.addPrescription(p4);
-
             // quit set too false to keep the while loop running until the user enters 'quit'
             boolean quit = false;
             // Menu while loop
