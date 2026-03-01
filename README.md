@@ -54,9 +54,9 @@ A Java-based console application managing core pharmacy operations including pat
 
 ---
 
-## User Guide Here 
+## User Guide/Key-Binds Here 
 ```
-=== Pharmacy Management System ===
+   Pharmacy Management System 
 1.  Add Patient
 2.  Add Doctor
 3.  Add Medication
