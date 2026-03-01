@@ -41,10 +41,6 @@ A Java-based console application managing core pharmacy operations including pat
 ### Installation
 
 1. **Clone the repository:**
-```bash
-git clone [https://github.com/your-username/pharmacy-management-system.git](https://github.com/Britten66/S3-MidTerm-Java.git)
-cd pharmacy-management-system
-```
 
 2. **Open in IntelliJ IDEA:**
    - File + Open + Select project directory
