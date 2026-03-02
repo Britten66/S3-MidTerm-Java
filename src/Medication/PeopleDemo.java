@@ -3,7 +3,7 @@ package Medication;
 // these are all positive tests, as we just want to confirm that everything is working as per requirments
 // when time is allocated we can add negative tests to account for error handling
 
-public class PeopleDemo {
+public class PeopleDemo{
 
 
    public static void main(String[] args) {

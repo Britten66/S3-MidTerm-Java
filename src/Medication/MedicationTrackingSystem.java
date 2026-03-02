@@ -5,7 +5,7 @@ package Medication;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-public class MedicationTrackingSystem {
+public class MedicationTrackingSystem extends Prescription {
 
     // here are the private variables that link to the classes made
 

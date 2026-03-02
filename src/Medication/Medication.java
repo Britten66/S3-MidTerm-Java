@@ -9,6 +9,7 @@ public class Medication {
     private int quantityInStock;
     private LocalDate expiryDate;
 
+    public Medication() {}
     public Medication(LocalDate expiryDate){
         this.expiryDate = expiryDate;
     }
