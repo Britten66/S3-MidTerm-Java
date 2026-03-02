@@ -5,7 +5,7 @@ package Medication;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-public class MedicationTrackingSystem {
+public class MedicationTrackingSystem extends Prescription {
 
     // here are the private variables that link to the classes made
 
@@ -210,16 +210,13 @@ public class MedicationTrackingSystem {
     }
 
     // Method to restock medication
-
-
     public void restockMedication() {
-
         boolean restock = false;
         // loop through medications to find medications that need to be restocked.
         for (Medication medication : medications) {
-            if (medication.getQuantityInStock() <= 5) {
+            if (medication.getQuantityInStock() <= 1) {
                 medication.setQuantityInStock(20);
-                System.out.println("Medication restocked.");
+                System.out.println("Medication restocked is " + medication.getName());
                 restock = true;
             }
         }
@@ -266,13 +263,17 @@ public class MedicationTrackingSystem {
 
     public void checkMedicationExpiryDate() {
         // Method to search for expired medication
+        boolean found = false;
             LocalDate currentDate = LocalDate.now();
             for (Medication medication : medications) {
                 if (medication.getExpiryDate().isBefore(currentDate)) {
                     System.out.println("Medication " + medication.getName() + " was expired on " + medication.getExpiryDate() + "\n");
+                    found = true;
                 }
             }
-            System.out.println("No expired medication found!");
+            if (!found){
+                System.out.println("No expired medication found!");
+            }
         }
 
 
@@ -280,6 +281,8 @@ public class MedicationTrackingSystem {
     public void expiredMedicationReport(){
         LocalDate currentDate = LocalDate.now();
         System.out.println("****** Expired Medication Report ******");
+        System.out.println();
+        boolean found = false;
         for (Medication medication : medications) {
             if (medication.getExpiryDate().isBefore(currentDate)) {
                 System.out.println("Medication " + medication.getName() +
@@ -287,13 +290,13 @@ public class MedicationTrackingSystem {
                         " Expired on" + " - " + medication.getExpiryDate() + "\n" +
                         " Quantity in stock" + " - " + medication.getQuantityInStock() );
                 System.out.println();
+                found = true;
             }
         }
-        System.out.println("No expired medication found!");
+        if (!found){
+            System.out.println("No expired medication found!");
+        }
     }
-
-
-
 
 
         // Method to print a full system report, doctors patients in the system.
@@ -336,18 +339,31 @@ public class MedicationTrackingSystem {
 
         // Method to print a report of a doctor and their prescriptions prescribed.
         public void prescriptionsByDoctorReport (String name){
+        boolean foundDoctor = false;
             System.out.println("****** Prescriptions prescribed by Doctor ****** \n");
             for (Doctor doctor : doctors) {
                 if (doctor.getName().equals(name)) {
                     System.out.println("Doctor " + doctor.getName());
+                    foundDoctor = true;
+                    boolean found = false;
                     for (Prescription prescription : prescriptions) {
-                        System.out.println("Prescriptions: " + "\n" +
-                                "Medication " + " - " + prescription.getMedication().getName() + "\n" +
-                                "Patient " + " - " + prescription.getPatient().getName() + " \n");
+                        if(doctor.getId() == prescription.getDoctor().getId()){
+                            System.out.println("Prescriptions: " + "\n" +
+                                    "Medication " + " - " + prescription.getMedication().getName() + "\n" +
+                                    "Patient " + " - " + prescription.getPatient().getName() + " \n");
+                            found = true;
+                        }
                     }
+                    if (!found) {
+                        System.out.println("No prescriptions found for this doctor.");
                 }
             }
         }
+            if(!foundDoctor){
+                System.out.println("No doctor found by the name entered");
+            }
+    }
+
         // Method to search for medication by name
         public void searchMedicationByName (String name){
             boolean found = false;
@@ -366,8 +382,10 @@ public class MedicationTrackingSystem {
             }
         }
 
-
-
+        public void addPrescription(Prescription prescription){
+            prescriptions.add(prescription);
+            System.out.println("Prescription " + prescription.getId() + " added");
+        }
     }
 
 

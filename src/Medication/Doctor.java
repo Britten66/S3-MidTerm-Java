@@ -10,7 +10,7 @@ package Medication;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Doctor extends Person {
+public class Doctor extends Patient {
 
     private String specialization;
     private List<Patient> patients;

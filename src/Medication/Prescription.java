@@ -2,13 +2,14 @@ package Medication;
 
 import java.time.LocalDate;
 
-public class Prescription{
+public class Prescription extends Medication {
     private int id;
     private Doctor doctor;
     private Patient patient;
     private Medication medication;
     private LocalDate prescriptionExpiry;
-
+    // no argument constructor here .. this was required
+    public Prescription() {}
         public Prescription(int id, Doctor doctor, Patient patient, Medication medication, LocalDate prescriptionExpiry){
             this.id = id;
             this.doctor = doctor;

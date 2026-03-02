@@ -11,8 +11,8 @@ public class Main {
             // quit set too false to keep the while loop running until the user enters 'quit'
             boolean quit = false;
             // Menu while loop
+            Scanner scanner = new Scanner(System.in);
             while(!quit){
-                Scanner scanner = new Scanner(System.in);
                 // Menu for the medication tracking system
                 System.out.println("****** RVThereYet Pharmacy Medication Tracking System ******");
                 System.out.println();
