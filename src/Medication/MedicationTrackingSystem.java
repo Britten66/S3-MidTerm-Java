@@ -147,11 +147,11 @@ public class MedicationTrackingSystem extends Prescription {
                 System.out.println("Doctor found: " + doctors.get(i));
 
                 return;
-
+            }
             }
             System.out.println("NO doctor found");
         }
-    }
+
 
 
     // adding a patient to the doctor
@@ -185,19 +185,23 @@ public class MedicationTrackingSystem extends Prescription {
                 foundDoctor = doctors.get(i);
             }
         }
+
+
         if (foundPatient != null && foundDoctor != null) {
             foundDoctor.addPatient((foundPatient));
 
             System.out.println("Patient added to Doctor");
         } else {
+
             System.out.println("Patient or Doctor Not Found");
+
         }
     }
-
     public void searchPatientByName(String name) {
         for (int i = 0; i < patients.size(); i++) {
             if (patients.get(i).getName().equalsIgnoreCase(name)) {
                 System.out.println("Patient Found: " + patients.get(i));
+                return;
             }
         }
         System.out.println("Patient not found");

@@ -46,6 +46,7 @@ public class Main {
                 System.out.println();
                 System.out.println("Enter 'Quit' to stop program ");
                 int option = scanner.nextInt();
+                scanner.nextLine();
                 switch (option){
                     case 1:
                         System.out.println("Enter patient id:");
@@ -81,7 +82,7 @@ public class Main {
                         system.updatePatient(updateIdPatient,updateNamePatient,updateAgePatient,updatePhoneNumberPatient);
                         break;
                     case 4:
-                        System.out.println("Enter ID of patient to delete");
+                        System.out.println("Enter name of patient to add");
                         String searchPatientName = scanner.nextLine();
                         system.searchPatientByName(searchPatientName);
                         break;
