@@ -386,40 +386,29 @@ public class MedicationTrackingSystem {
             prescriptions.add(prescription);
             System.out.println("Prescription " + prescription.getId() + " added");
         }
+
+        public void patientsPrescriptionLastYearReport(String name) {
+            System.out.println("****** Prescriptions in the last year ******");
+            System.out.println("Patient: " + name);
+
+            LocalDate oneYearAgo = LocalDate.now().minusYears(1);
+            boolean hasPrescriptions = false;
+
+            for (Prescription prescription : prescriptions) {
+                if (prescription.getPatient().getName().equals(name)) {
+
+                    LocalDate prescriptionIssuedDate = prescription.getPrescriptionExpiry().minusYears(1);
+
+                    if (prescriptionIssuedDate.isAfter(oneYearAgo) || prescriptionIssuedDate.isEqual(oneYearAgo)) {
+                        System.out.println("Medication - " + prescription.getMedication().getName() + " Date: " + prescriptionIssuedDate);
+                        hasPrescriptions = true;
+                    }
+                }
+            }
+
+            if (!hasPrescriptions) {
+                System.out.println("No prescriptions found for this patient in the last year.");
+            }
+        }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
