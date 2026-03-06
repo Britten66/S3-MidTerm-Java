@@ -135,5 +135,9 @@ public class PrescriptionDemo {
         // print full system report
         System.out.println();
         system.fullSystemReport();
+
+        // print prescription for the last year for patient
+        System.out.println();
+        system.patientsPrescriptionLastYearReport("Steven seagull");
     }
 }
