@@ -43,8 +43,9 @@ public class Main {
                 System.out.println("16. Full system report");
                 System.out.println("17. Expired medication report");
                 System.out.println("18. List of prescription prescribed by doctor");
+                System.out.println("19. Prescription medication prescribed to patient in last year report");
                 System.out.println();
-                System.out.println("Enter 'Quit' to stop program ");
+                System.out.println("Enter '20' to stop program ");
                 int option = scanner.nextInt();
                 scanner.nextLine();
                 switch (option){
@@ -222,13 +223,6 @@ public class Main {
 
                         break;
 
-
-
-
-
-
-
-
                     case 16:
                         system.fullSystemReport();
                         break;
@@ -242,9 +236,12 @@ public class Main {
                         system.prescriptionsByDoctorReport(reportName);
                         break;
 
-
-
                     case 19:
+                        System.out.println("Enter name of patient to generate prescription report");
+                        String patientName = scanner.nextLine();
+                        system.patientsPrescriptionLastYearReport(patientName);
+                        break;
+                    case 20:
                         quit = true;
                         System.out.println("System shutting down");
                         break;
